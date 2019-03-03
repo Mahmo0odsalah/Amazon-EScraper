@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon EScraper</title>
+</head>
+<body>
+<center>
+    <h1>Amazon EScraper</h1>
+    {% if request.method == 'GET' :%} <h2>{{sku}}</h2>{%endif%}
+
+    <form action = "/reviews" method = "POST">
+        <input type="input" name="sku" id="sku">
+        <input type="submit" value="Show reviews" name="submit">
+    </form>
+        {% if request.method == 'POST' :%} <table>{{sku|safe}}</table>{%endif%}
+
+</center>
+
+</body>
+</html>

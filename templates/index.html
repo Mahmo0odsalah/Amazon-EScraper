@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon EScraper</title>
+</head>
+<body>
+<center>
+    <h1>Amazon EScraper</h1>
+    <h2><a href="/reviews">reviews</a></h2>
+
+    {% if request.method == 'GET' :%} <h2>{{path}}</h2>{%endif%}
+
+    <form action = "/" method = "POST">
+        <input type="input" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload .CSV file" name="submit">
+    </form>
+        {% if request.method == 'POST' :%} <table>{{path|safe}}</table>{%endif%}
+
+</center>
+
+</body>
+</html>
